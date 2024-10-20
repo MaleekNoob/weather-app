@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="thora.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="thora.html">Dashboard</a></li>
+            <li><a href="gemini.html">Chatbot</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Weather App</h1>
+        <p id="location-status">Detecting your location...</p>
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Enter city name">
+            <button id="get-weather">Get Weather</button>
+        </div>
+        <div class="weather-info">
+            <h2 id="weather-city"></h2>
+            <img id="weather-icon" src="" alt="Weather icon">
+            <p id="weather-description"></p>
+            <p id="temperature"></p>
+            <p id="humidity"></p>
+            <p id="wind-speed"></p>
+            <button id="unit-toggle">Switch to Fahrenheit</button>
+        </div>
+        <div class="forecast">
+            <h2>5-Day Forecast</h2>
+            <div class="filter-buttons">
+                <button onclick="applyFilter('asc')">Temperatures Ascending</button>
+                <button onclick="applyFilter('desc')">Temperatures Descending</button>
+                <button onclick="applyFilter('rain')">Days with Rain</button>
+                <button onclick="applyFilter('highest')">Highest Temperature</button>
+                <button onclick="resetFilter()">Reset</button>
+            </div>
+            <table id="weatherTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Temperature</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Forecast data will be inserted here -->
+                </tbody>
+            </table>
+            <div class="pagination">
+                <button onclick="changePage(-1)">Previous</button>
+                <span id="page-info"></span>
+                <button onclick="changePage(1)">Next</button>
+            </div>
+        </div>
+        <div class="chart-container">
+            <div class="chart">
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="chart">
+                <canvas id="doughnutChart"></canvas>
+            </div>
+            <div class="chart">
+                <canvas id="lineChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="thora.js"></script>
+</body>
+</html>

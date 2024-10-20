@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #3494e6, #ec6ead);
+    color: #333;
+}
+.navbar {
+    background-color: #7d7d7d;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+}
+
+.navbar ul li a:hover {
+    background-color: #575757;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1, h2 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+#city-input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+#get-weather {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+.weather-info, .forecast, .chart-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.weather-info {
+    text-align: center;
+}
+#weather-icon {
+    width: 100px;
+    height: 100px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.chart {
+    width: 30%;
+    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    .chart {
+        width: 100%;
+    }
+}
+#unit-toggle {
+    margin-top: 10px;
+}
+#location-status {
+    text-align: center;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+.filter-buttons {
+    margin-bottom: 10px;
+}
+.filter-buttons button {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.pagination button {
+    margin: 0 5px;
+}
+

@@ -66,7 +66,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <ul>
-            <li><a href="thora.html">Dashboard</a></li>
+            <li><a href="index.html">Dashboard</a></li>
             <li><a href="gemini.html">Chatbot</a></li>
         </ul>
     </nav>
@@ -110,8 +110,19 @@
                 try {
                     const city = userPrompt.match(/in (\w+)/i)?.[1]; // Extract city from the user's question
                     if (city) {
+
+                        const model = await genAI.getGenerativeModel({
+                            model: "gemini-1.5-flash",
+                        });
+
                         const weatherResponse = await fetchWeather(city);
-                        document.getElementById('responseOutput').innerHTML = `<strong>Bot Response:</strong> ${weatherResponse}`;
+
+                        let prompt = `You are an interactive weather bot. You are required to provide response to user queries about weather conditions based on the following information:\n ${weatherResponse}\nHere's a user query: "${userPrompt}"\nProvide a response to the user query with few complimentary remarks and relevant emoji.`;
+
+                        const result = await model.generateContent(prompt);
+                        const response = await result.response.text();
+
+                        document.getElementById('responseOutput').innerHTML = `<strong>Bot Response:</strong> ${response}`;
                     } else {
                         const model = await genAI.getGenerativeModel({
                             model: "gemini-1.5-flash",

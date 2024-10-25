@@ -212,7 +212,7 @@ function toggleUnit() {
     document.getElementById('unit-toggle').textContent = `Switch to ${currentUnit === 'metric' ? 'Fahrenheit' : 'Celsius'}`;
     
     if (currentWeatherData && currentForecastData) {
-        fetchWeather(); // Re-fetch data with new unit
+        fetchWeather(city); // Re-fetch data with new unit
     }
 }
 

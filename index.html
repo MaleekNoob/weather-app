@@ -11,7 +11,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <ul>
-            <li><a href="thora.html">Dashboard</a></li>
+            <li><a href="index.html">Dashboard</a></li>
             <li><a href="gemini.html">Chatbot</a></li>
         </ul>
     </nav>
@@ -59,15 +59,20 @@
                 <button onclick="changePage(1)">Next</button>
             </div>
         </div>
+
+        <!-- Vertically Stacked Chart Sections -->
         <div class="chart-container">
             <div class="chart">
-                <canvas id="barChart"></canvas>
+                <h2>Temperature Bar Chart</h2>
+                <canvas id="barChart" width="600" height="400"></canvas>
             </div>
             <div class="chart">
-                <canvas id="doughnutChart"></canvas>
+                <h2>Weather Conditions Doughnut Chart</h2>
+                <canvas id="doughnutChart" width="600" height="400"></canvas>
             </div>
             <div class="chart">
-                <canvas id="lineChart"></canvas>
+                <h2>Temperature Line Chart</h2>
+                <canvas id="lineChart" width="600" height="400"></canvas>
             </div>
         </div>
     </div>

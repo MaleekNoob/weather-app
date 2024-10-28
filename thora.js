@@ -4,7 +4,7 @@ let currentWeatherData = null;
 let currentForecastData = null;
 let forecastData = [];
 let currentPage = 1;
-const itemsPerPage = 5;
+const itemsPerPage = 10; // Show 10 items per page now
 
 document.getElementById('get-weather').addEventListener('click', () => fetchWeather(document.getElementById('city-input').value));
 document.getElementById('unit-toggle').addEventListener('click', toggleUnit);
@@ -65,10 +65,13 @@ async function fetchWeather(city) {
         currentWeatherData = await weatherResponse.json();
         currentForecastData = await forecastResponse.json();
 
+        // extract first 5 days of forecast data
+        forecastData = currentForecastData.list.slice(0, 5);
+
         displayWeather(currentWeatherData);
         processForecastData(currentForecastData);
         displayForecast();
-        updateCharts(currentForecastData);
+        updateCharts(currentForecastData); // Update charts with the forecast data
     } else {
         alert('City not found!');
     }
@@ -139,82 +142,123 @@ function applyFilter(filterType) {
             filteredData = filteredData.filter(day => day.rain > 0);
             break;
         case 'highest':
-            filteredData = [filteredData.reduce((max, day) => max.temp > day.temp ? max : day)];
+            filteredData = [filteredData.reduce((prev, curr) => (prev.temp > curr.temp ? prev : curr))];
+            break;
+        default:
             break;
     }
 
-    currentPage = 1;
     displayForecast(filteredData);
 }
 
 function resetFilter() {
-    currentPage = 1;
     displayForecast();
-}
-
-function updateCharts(data) {
-    const temperatures = data.list.slice(0, 5).map(day => day.main.temp);
-    const labels = data.list.slice(0, 5).map(day => new Date(day.dt * 1000).toLocaleDateString());
-    const weatherConditions = data.list.slice(0, 5).map(day => day.weather[0].main);
-
-    new Chart(document.getElementById('barChart'), {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: `Temperature (°${currentUnit === 'metric' ? 'C' : 'F'})`,
-                data: temperatures,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            animation: { delay: 1000 },
-            scales: { y: { beginAtZero: true } }
-        }
-    });
-
-    new Chart(document.getElementById('doughnutChart'), {
-        type: 'doughnut',
-        data: {
-            labels: [...new Set(weatherConditions)],
-            datasets: [{
-                label: 'Weather Conditions',
-                data: weatherConditions.map(condition => weatherConditions.filter(c => c === condition).length),
-                backgroundColor: ['#f39c12', '#1abc9c', '#3498db', '#e74c3c'],
-            }]
-        },
-        options: { animation: { delay: 1500 } }
-    });
-
-    new Chart(document.getElementById('lineChart'), {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: `Temperature (°${currentUnit === 'metric' ? 'C' : 'F'})`,
-                data: temperatures,
-                fill: false,
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            animation: { duration: 1000 },
-            scales: { y: { beginAtZero: true } }
-        }
-    });
 }
 
 function toggleUnit() {
     currentUnit = currentUnit === 'metric' ? 'imperial' : 'metric';
     document.getElementById('unit-toggle').textContent = `Switch to ${currentUnit === 'metric' ? 'Fahrenheit' : 'Celsius'}`;
-    
     if (currentWeatherData && currentForecastData) {
-        fetchWeather(city); // Re-fetch data with new unit
+        fetchWeather(currentWeatherData.name);
     }
 }
 
-// Call getLocation when the page loads
-window.onload = getLocation;
+// Chart Updates
+function updateCharts(forecastData) {
+    // Extract data for the charts
+    const dates = forecastData.map(day => day.date.toLocaleDateString());
+    const temps = forecastData.map(day => day.temp);
+    const conditions = forecastData.map(day => day.description);
+
+    // Destroy existing charts if they exist
+    // if (window.barChart) window.barChart.destroy();
+    // if (window.doughnutChart) window.doughnutChart.destroy();
+    // if (window.lineChart) window.lineChart.destroy();
+
+    // Temperature Bar Chart
+    window.barChart = new Chart(document.getElementById('barChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Temperature',
+                data: temps,
+                backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+
+    // Weather Conditions Doughnut Chart
+    const conditionCounts = conditions.reduce((acc, condition) => {
+        acc[condition] = (acc[condition] || 0) + 1;
+        return acc;
+    }, {});
+
+    window.doughnutChart = new Chart(document.getElementById('doughnutChart').getContext('2d'), {
+        type: 'doughnut',
+        data: {
+            labels: Object.keys(conditionCounts),
+            datasets: [{
+                data: Object.values(conditionCounts),
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+                hoverOffset: 4
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+
+    // Temperature Line Chart
+    window.lineChart = new Chart(document.getElementById('lineChart').getContext('2d'), {
+        type: 'line',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Temperature',
+                data: temps,
+                fill: false,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                tension: 0.1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+}
+
+// Call updateCharts after fetching and processing forecast data
+async function fetchWeather(city) {
+    const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${currentUnit}`);
+    const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${currentUnit}`);
+
+    if (weatherResponse.ok && forecastResponse.ok) {
+        currentWeatherData = await weatherResponse.json();
+        currentForecastData = await forecastResponse.json();
+
+        displayWeather(currentWeatherData);
+        processForecastData(currentForecastData);
+        displayForecast();
+        updateCharts(forecastData); // Update charts with the forecast data
+    } else {
+        alert('City not found!');
+    }
+}
+
+getLocation();

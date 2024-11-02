@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maleek - Gallery Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#333333',
+                        secondary: '#666666',
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        #gallery {
+            margin-top: 2rem;
+        }
+
+                /* Mobile Portrait (small screens like iPhone, smaller Android) */
+                @media (max-width: 480px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav.flex > div > a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        /* Mobile Landscape and Tablets (already present in your code) */
+        @media (max-width: 768px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav.flex > div > a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        /* Tablets (Portrait) */
+        @media (max-width: 1024px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+
+            nav.flex > div > a {
+                margin: 5px 0;
+            }
+
+            nav#socials {
+                display: block;
+                text-align: center;
+            }
+
+            nav#socials a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+        }
+
+        /* Medium Screens (Laptops/Desktops) */
+        @media (max-width: 1280px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            nav.flex > div > a {
+                margin: 5px 0;
+            }
+
+            nav#socials {
+                display: block;
+                text-align: center;
+            }
+
+            nav#socials a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+        }
+
+        /* Large Screens (Desktops) */
+        @media (min-width: 1281px) {
+            nav.flex {
+                justify-content: space-between;
+            }
+
+            nav.flex > div {
+                width: auto;
+            }
+
+            nav#socials a {
+                margin: 0 30px;
+            }
+        }
+
+        /* Responsive design for image grid */
+        @media (min-width: 640px) {
+            #gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 1024px) {
+            #gallery-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+    </style>
+</head>
+<body class="bg-stone-200 text-primary font-montserrat">
+
+    <header class="container mx-auto px-4 py-8">
+        <nav class="flex justify-between items-center">
+            <div class="bg-zinc-200 text-black px-2 py-4 rounded-full">
+                <a href="mailto:maleekhussainali456@gmail.com" class="text-sm font-bold mr-4">maleekhussainali456@gmail.com</a>
+                <a href="Maleek-Hussain-Ali_Resume.pdf" class="bg-white font-bold text-black px-5 py-4 rounded-full text-sm">Copy</a>
+                <a href="Maleek-Hussain-Ali_Resume.pdf" class="bg-white font-bold text-black px-5 py-4 rounded-full text-sm">CV</a>
+            </div>
+            <div id="socials inline-block">
+                <a href="index.html" class="mr-4 font-bold">Home</a>
+                <a href="personal-profile.html" class="mr-4 font-bold">Personal Profile</a>
+                <a href="gallery-page.html" class="mr-4 font-bold">Gallery Page</a>
+                <a href="career-goals.html" class="mr-4 font-bold">Career Goals</a>
+                <a href="projects.html" class="mr-4 font-bold">Projects</a>
+                <a href="skills-and-interests.html" class="mr-4 font-bold">Skills and Interests</a>
+                <a href="contact.html" class="font-bold">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto my-8">
+        <section id="gallery" class="text-center">
+            <h1 class="text-5xl font-bold mb-8">Gallery</h1>
+            <p class="text-lg mb-12">A collection of images showcasing my hobbies, projects, and interests.</p>
+
+            <!-- Photo Grid -->
+            <div id="gallery-grid" class="grid grid-cols-1 gap-8">
+                <!-- Image 1 -->
+                <div class="relative">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.BOvHrxbYxMV9Tqz5FALFuAAAAA?w=289&h=320&rs=1&pid=ImgDetMain" alt="Placeholder Image" class="rounded-lg object-cover w-full h-full">
+                    <p class="absolute bottom-0 left-0 right-0 bg-black text-white text-sm p-2">Project 1 - Web Development</p>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="relative">
+                    <img src="https://user-images.githubusercontent.com/81370648/280978659-cc364ddf-784f-452f-af17-be664b4ba950.png" alt="Placeholder Image" class="rounded-lg object-cover w-full h-full">
+                    <p class="absolute bottom-0 left-0 right-0 bg-black text-white text-sm p-2">Python Automation Script</p>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="relative">
+                    <img src="https://th.bing.com/th/id/R.2c9a59eeba41298b84cd6a8fa2d81e51?rik=cwemXaedLOcojw&riu=http%3a%2f%2fwww.menswearstyle.co.uk%2fcontent%2fblogs%2f36cb3987-b443-4588-9b87-3949643628a8_blog_ln_.jpg&ehk=iqe4CsAHjYj19PflMRHjkkipw0yud8ucQy%2bfDyEHasI%3d&risl=&pid=ImgRaw&r=0" alt="Placeholder Image" class="rounded-lg object-cover w-full h-full">
+                    <p class="absolute bottom-0 left-0 right-0 bg-black text-white text-sm p-2">Weekend Hiking Trip</p>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="relative">
+                    <img src="https://th.bing.com/th/id/R.08d01bd1e4fb21bfdbbbc5a25bacdeb7?rik=KIW8kEbIo969fw&pid=ImgRaw&r=0" alt="Placeholder Image" class="rounded-lg object-cover w-full h-full">
+                    <p class="absolute bottom-0 left-0 right-0 bg-black text-white text-sm p-2">Learning Data Science</p>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="relative">
+                    <img src="https://media.licdn.com/dms/image/D4D12AQEQcL_0YUyu-Q/article-cover_image-shrink_720_1280/0/1693774149140?e=2147483647&v=beta&t=i8SKx2IFGhntRV3pdwb3YeFHPHi7FLmIlsLA57U2DKI" alt="Placeholder Image" class="rounded-lg object-cover w-full h-full">
+                    <p class="absolute bottom-0 left-0 right-0 bg-black text-white text-sm p-2">Building AI Projects</p>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="relative">
+                    <img src="https://www.travelagewest.com/uploadedImages/Professional_Development/Opinion/TAW_181112_NEWS_ActiveTravel.jpg" alt="Placeholder Image" class="rounded-lg object-cover w-full h-full">
+                    <p class="absolute bottom-0 left-0 right-0 bg-black text-white text-sm p-2">Travel Adventure</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <hr class="border-t-2 border-gray-300 my-8 mx-auto" style="width: 90%;">
+
+    <footer class="container mx-auto px-4 py-8 text-center text-xl">
+        <p>&copy; 2024 All rights reserved.</p>
+        <div class="mt-4">
+            <a href="https://www.linkedin.com/in/maleek-hussain-ali-b60045249/" class="mr-4">LinkedIn</a>
+            <a href="https://github.com/MaleekNoob" class="mr-4">Github</a>
+            <a href="https://www.kaggle.com/maleeknoob">Kaggle</a>
+        </div>
+    </footer>
+</body>
+</html>

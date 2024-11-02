@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maleek - Skills and Interests</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#333333',
+                        secondary: '#666666',
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+
+        /* Mobile Portrait (small screens like iPhone, smaller Android) */
+        @media (max-width: 480px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav.flex > div > a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        /* Mobile Landscape and Tablets (already present in your code) */
+        @media (max-width: 768px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav.flex > div > a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        /* Tablets (Portrait) */
+        @media (max-width: 1024px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+
+            nav.flex > div > a {
+                margin: 5px 0;
+            }
+
+            nav#socials {
+                display: block;
+                text-align: center;
+            }
+
+            nav#socials a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+        }
+
+        /* Medium Screens (Laptops/Desktops) */
+        @media (max-width: 1280px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            nav.flex > div > a {
+                margin: 5px 0;
+            }
+
+            nav#socials {
+                display: block;
+                text-align: center;
+            }
+
+            nav#socials a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+        }
+
+        /* Large Screens (Desktops) */
+        @media (min-width: 1281px) {
+            nav.flex {
+                justify-content: space-between;
+            }
+
+            nav.flex > div {
+                width: auto;
+            }
+
+            nav#socials a {
+                margin: 0 30px;
+            }
+        }
+
+    </style>
+
+</head>
+<body class="bg-stone-200 text-primary font-montserrat">
+
+    <header class="container mx-auto px-4 py-8">
+        <nav class="flex justify-between items-center">
+            <div class="bg-zinc-200 text-black px-2 py-4 rounded-full">
+                <a href="mailto:maleekhussainali456@gmail.com" class="text-sm font-bold mr-4">maleekhussainali456@gmail.com</a>
+                <a href="Maleek-Hussain-Ali_Resume.pdf" class="bg-white font-bold text-black px-5 py-4 rounded-full text-sm">Copy</a>
+                <a href="Maleek-Hussain-Ali_Resume.pdf" class="bg-white font-bold text-black px-5 py-4 rounded-full text-sm">CV</a>
+            </div>
+            <div id="socials inline-block">
+                <a href="index.html" class="mr-4 font-bold">Home</a>
+                <a href="personal-profile.html" class="mr-4 font-bold">Personal Profile</a>
+                <a href="gallery-page.html" class="mr-4 font-bold">Gallery Page</a>
+                <a href="career-goals.html" class="mr-4 font-bold">Career Goals</a>
+                <a href="projects.html" class="mr-4 font-bold">Projects</a>
+                <a href="skills-and-interests.html" class="mr-4 font-bold">Skills and Interests</a>
+                <a href="contact.html" class="font-bold">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto my-8">
+        <section id="skills" class="text-center mb-12">
+            <h1 class="text-5xl font-bold mb-8">Skills</h1>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg/grid-cols-3 gap-8">
+                <!-- Skill 1: Python -->
+                <div class="bg-white shadow-md rounded-lg p-3">
+                    <h2 class="text-2xl font-bold mb-2">Python</h2>
+                    <div class="w-full bg-gray-300 rounded-full h-6 mb-4">
+                        <div class="bg-green-500 h-6 rounded-full" style="width: 95%;"></div>
+                    </div>
+                    <p class="text-sm">Proficiency: 95%</p>
+                </div>
+
+                <!-- Skill 2: Flask -->
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <h2 class="text-2xl font-bold mb-2">Flask</h2>
+                    <div class="w-full bg-gray-300 rounded-full h-6 mb-4">
+                        <div class="bg-green-500 h-6 rounded-full" style="width: 85%;"></div>
+                    </div>
+                    <p class="text-sm">Proficiency: 85%</p>
+                </div>
+
+                <!-- Skill 3: TensorFlow -->
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <h2 class="text-2xl font-bold mb-2">TensorFlow</h2>
+                    <div class="w-full bg-gray-300 rounded-full h-6 mb-4">
+                        <div class="bg-green-500 h-6 rounded-full" style="width: 80%;"></div>
+                    </div>
+                    <p class="text-sm">Proficiency: 80%</p>
+                </div>
+
+                <!-- Skill 4: APIs Integration -->
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <h2 class="text-2xl font-bold mb-2">API Integration</h2>
+                    <div class="w-full bg-gray-300 rounded-full h-6 mb-4">
+                        <div class="bg-green-500 h-6 rounded-full" style="width: 90%;"></div>
+                    </div>
+                    <p class="text-sm">Proficiency: 90%</p>
+                </div>
+
+                <!-- Skill 5: Machine Learning -->
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <h2 class="text-2xl font-bold mb-2">Machine Learning</h2>
+                    <div class="w-full bg-gray-300 rounded-full h-6 mb-4">
+                        <div class="bg-green-500 h-6 rounded-full" style="width: 88%;"></div>
+                    </div>
+                    <p class="text-sm">Proficiency: 88%</p>
+                </div>
+
+                <!-- Add more skills as needed -->
+            </div>
+        </section>
+
+        <section id="interests" class="text-center">
+            <h1 class="text-5xl font-bold mb-8">Interests</h1>
+            <div class="bg-white shadow-md rounded-lg p-6 text-left">
+                <h2 class="text-2xl font-bold mb-4">Driving</h2>
+                <p class="text-lg mb-4">I love exploring new places, and driving gives me the freedom to discover them. Driving through the landscapes of Texas, whether it’s the highways or rural roads, is one of my favorite ways to relax.</p>
+
+                <h2 class="text-2xl font-bold mb-4">AI & Machine Learning</h2>
+                <p class="text-lg mb-4">I’m deeply passionate about artificial intelligence and machine learning. Exploring new ML algorithms, developing innovative AI models, and integrating them into real-world projects is something that excites me.</p>
+
+                <h2 class="text-2xl font-bold mb-4">Reading</h2>
+                <p class="text-lg mb-4">Reading non-fiction books, especially on topics like self-improvement, science, and current affairs, is another one of my key interests. It helps me stay informed and broaden my perspective on the world.</p>
+
+                <h2 class="text-2xl font-bold mb-4">Technology & Gadgets</h2>
+                <p class="text-lg mb-4">I'm fascinated by the latest technological advancements and gadgets. Whether it's AI-powered devices or new innovations in computing, I enjoy keeping up with the trends and understanding how technology shapes our future.</p>
+            </div>
+        </section>
+    </main>
+
+    <hr class="border-t-2 border-gray-300 my-8 mx-auto" style="width: 90%;">
+
+    <footer class="container mx-auto px-4 py-8 text-center text-xl">
+        <p>&copy; 2024 All rights reserved.</p>
+        <div class="mt-4">
+            <a href="https://www.linkedin.com/in/maleek-hussain-ali-b60045249/" class="mr-4">LinkedIn</a>
+            <a href="https://github.com/MaleekNoob" class="mr-4">Github</a>
+            <a href="https://www.kaggle.com/maleeknoob">Kaggle</a>
+        </div>
+    </footer>
+
+</body>
+</html>

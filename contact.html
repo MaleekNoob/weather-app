@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maleek - Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#333333',
+                        secondary: '#666666',
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+
+        /* Mobile Portrait (small screens like iPhone, smaller Android) */
+        @media (max-width: 480px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav.flex > div > a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        /* Mobile Landscape and Tablets (already present in your code) */
+        @media (max-width: 768px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav.flex > div > a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        /* Tablets (Portrait) */
+        @media (max-width: 1024px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+
+            nav.flex > div > a {
+                margin: 5px 0;
+            }
+
+            nav#socials {
+                display: block;
+                text-align: center;
+            }
+
+            nav#socials a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+        }
+
+        /* Medium Screens (Laptops/Desktops) */
+        @media (max-width: 1280px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            nav.flex > div > a {
+                margin: 5px 0;
+            }
+
+            nav#socials {
+                display: block;
+                text-align: center;
+            }
+
+            nav#socials a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+        }
+
+        /* Large Screens (Desktops) */
+        @media (min-width: 1281px) {
+            nav.flex {
+                justify-content: space-between;
+            }
+
+            nav.flex > div {
+                width: auto;
+            }
+
+            nav#socials a {
+                margin: 0 30px;
+            }
+        }
+
+    </style>
+
+</head>
+<body class="bg-stone-200 text-primary font-montserrat">
+
+    <header class="container mx-auto px-4 py-8">
+        <nav class="flex justify-between items-center">
+            <div class="bg-zinc-200 text-black px-2 py-4 rounded-full">
+                <a href="mailto:maleekhussainali456@gmail.com" class="text-sm font-bold mr-4">maleekhussainali456@gmail.com</a>
+                <a href="Maleek-Hussain-Ali_Resume.pdf" class="bg-white font-bold text-black px-5 py-4 rounded-full text-sm">Copy</a>
+                <a href="Maleek-Hussain-Ali_Resume.pdf" class="bg-white font-bold text-black px-5 py-4 rounded-full text-sm">CV</a>
+            </div>
+            <div id="socials inline-block">
+                <a href="index.html" class="mr-4 font-bold">Home</a>
+                <a href="personal-profile.html" class="mr-4 font-bold">Personal Profile</a>
+                <a href="gallery-page.html" class="mr-4 font-bold">Gallery Page</a>
+                <a href="career-goals.html" class="mr-4 font-bold">Career Goals</a>
+                <a href="projects.html" class="mr-4 font-bold">Projects</a>
+                <a href="skills-and-interests.html" class="mr-4 font-bold">Skills and Interests</a>
+                <a href="contact.html" class="font-bold">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto my-8">
+        <!-- Contact Form Section -->
+        <section id="contact-form" class="text-center mb-12">
+            <h1 class="text-5xl font-bold mb-8">Contact Me</h1>
+            <form action="submit_form.php" method="POST" class="max-w-lg mx-auto bg-white shadow-md rounded-lg p-8">
+                <div class="mb-4">
+                    <label for="name" class="block text-left font-bold mb-2">Name:</label>
+                    <input type="text" id="name" name="name" class="w-full bg-gray-100 rounded-lg p-4" placeholder="Your Name" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-left font-bold mb-2">Email:</label>
+                    <input type="email" id="email" name="email" class="w-full bg-gray-100 rounded-lg p-4" placeholder="Your Email" required>
+                </div>
+                <div class="mb-4">
+                    <label for="subject" class="block text-left font-bold mb-2">Subject:</label>
+                    <input type="text" id="subject" name="subject" class="w-full bg-gray-100 rounded-lg p-4" placeholder="Subject" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-left font-bold mb-2">Message:</label>
+                    <textarea id="message" name="message" class="w-full bg-gray-100 rounded-lg p-4 h-32" placeholder="Your Message" required></textarea>
+                </div>
+                <div class="mt-8">
+                    <button type="submit" class="bg-green-500 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-green-600 transition duration-300">Send Message</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Contact Information Section -->
+        <section id="contact-info" class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Get in Touch</h2>
+            <p class="text-lg mb-6">Feel free to reach out to me directly using the details below:</p>
+            <div class="bg-white shadow-md rounded-lg p-6 inline-block text-left">
+                <p class="text-xl font-bold mb-4">Email:</p>
+                <a href="mailto:maleekhussainali456@gmail.com" class="text-blue-500 text-lg">maleekhussainali456@gmail.com</a>
+                
+                <p class="text-xl font-bold mb-4 mt-6">Phone:</p>
+                <p class="text-lg">+92 312 9661212</p>
+            </div>
+        </section>
+    </main>
+
+    <hr class="border-t-2 border-gray-300 my-8 mx-auto" style="width: 90%;">
+
+    <footer class="container mx-auto px-4 py-8 text-center text-xl">
+        <p>&copy; 2024 All rights reserved.</p>
+        <div class="mt-4">
+            <a href="https://www.linkedin.com/in/maleek-hussain-ali-b60045249/" class="mr-4">LinkedIn</a>
+            <a href="https://github.com/MaleekNoob" class="mr-4">Github</a>
+            <a href="https://www.kaggle.com/maleeknoob">Kaggle</a>
+        </div>
+    </footer>
+
+</body>
+</html>

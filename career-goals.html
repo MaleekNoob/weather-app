@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maleek - Career Goals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#333333',
+                        secondary: '#666666',
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+            
+        /* Mobile Portrait (small screens like iPhone, smaller Android) */
+        @media (max-width: 480px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav.flex > div > a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        /* Mobile Landscape and Tablets (already present in your code) */
+        @media (max-width: 768px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav.flex > div > a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        /* Tablets (Portrait) */
+        @media (max-width: 1024px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+
+            nav.flex > div > a {
+                margin: 5px 0;
+            }
+
+            nav#socials {
+                display: block;
+                text-align: center;
+            }
+
+            nav#socials a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+        }
+
+        /* Medium Screens (Laptops/Desktops) */
+        @media (max-width: 1280px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            nav.flex > div > a {
+                margin: 5px 0;
+            }
+
+            nav#socials {
+                display: block;
+                text-align: center;
+            }
+
+            nav#socials a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+        }
+
+        /* Large Screens (Desktops) */
+        @media (min-width: 1281px) {
+            nav.flex {
+                justify-content: space-between;
+            }
+
+            nav.flex > div {
+                width: auto;
+            }
+
+            nav#socials a {
+                margin: 0 30px;
+            }
+        }
+
+    </style>
+</head>
+<body class="bg-stone-200 text-primary font-montserrat">
+
+    <header class="container mx-auto px-4 py-8">
+        <nav class="flex justify-between items-center">
+            <div class="bg-zinc-200 text-black px-2 py-4 rounded-full">
+                <a href="mailto:maleekhussainali456@gmail.com" class="text-sm font-bold mr-4">maleekhussainali456@gmail.com</a>
+                <a href="Maleek-Hussain-Ali_Resume.pdf" class="bg-white font-bold text-black px-5 py-4 rounded-full text-sm">Copy</a>
+                <a href="Maleek-Hussain-Ali_Resume.pdf" class="bg-white font-bold text-black px-5 py-4 rounded-full text-sm">CV</a>
+            </div>
+            <div id="socials inline-block">
+                <a href="index.html" class="mr-4 font-bold">Home</a>
+                <a href="personal-profile.html" class="mr-4 font-bold">Personal Profile</a>
+                <a href="gallery-page.html" class="mr-4 font-bold">Gallery Page</a>
+                <a href="career-goals.html" class="mr-4 font-bold">Career Goals</a>
+                <a href="projects.html" class="mr-4 font-bold">Projects</a>
+                <a href="skills-and-interests.html" class="mr-4 font-bold">Skills and Interests</a>
+                <a href="contact.html" class="font-bold">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto my-8">
+        <section id="career-goals" class="text-center">
+            <h1 class="text-5xl font-bold mb-8">Career Goals</h1>
+
+            <!-- Short-Term Goals Section -->
+            <section class="mb-12">
+                <h2 class="text-3xl font-semibold mb-4">Short-Term Goals</h2>
+                <ul class="text-lg list-disc list-inside space-y-2">
+                    <li>Secure a position as a Machine Learning Engineer in a reputable tech company.</li>
+                    <li>Enhance my skills in natural language processing (NLP) and computer vision.</li>
+                    <li>Contribute to open-source AI projects and build a strong portfolio.</li>
+                    <li>Obtain certifications in advanced AI topics like Reinforcement Learning and Data Engineering.</li>
+                    <li>Expand my professional network by connecting with industry experts on platforms like LinkedIn.</li>
+                </ul>
+            </section>
+
+            <!-- Long-Term Goals Section -->
+            <section class="mb-12">
+                <h2 class="text-3xl font-semibold mb-4">Long-Term Goals</h2>
+                <ul class="text-lg list-disc list-inside space-y-2">
+                    <li>Lead a team of AI engineers in a groundbreaking AI/ML startup or company.</li>
+                    <li>Develop AI applications that revolutionize industries such as healthcare, finance, or education.</li>
+                    <li>Establish my own AI-based startup, focusing on solving real-world problems through automation and innovation.</li>
+                    <li>Become an expert in Artificial General Intelligence (AGI) and contribute to research in this field.</li>
+                    <li>Mentor upcoming AI enthusiasts and foster a community of innovators and technologists.</li>
+                </ul>
+            </section>
+
+            <!-- Call-to-Action -->
+            <section class="mt-12">
+                <h2 class="text-3xl font-semibold mb-4">What Drives Me</h2>
+                <p class="text-lg italic px-4 py-2 bg-primary text-white rounded-lg max-w-3xl mx-auto">
+                    "The best way to predict the future is to create it." – Peter Drucker
+                </p>
+                <p class="text-lg mt-6 max-w-2xl mx-auto">This quote embodies my philosophy: I am driven by the desire to create solutions that push boundaries, make lives easier, and contribute to the betterment of society through technology.</p>
+            </section>
+        </section>
+    </main>
+
+    <hr class="border-t-2 border-gray-300 my-8 mx-auto" style="width: 90%;">
+
+    <footer class="container mx-auto px-4 py-8 text-center text-xl">
+        <p>&copy; 2024 All rights reserved.</p>
+        <div class="mt-4">
+            <a href="https://www.linkedin.com/in/maleek-hussain-ali-b60045249/" class="mr-4">LinkedIn</a>
+            <a href="https://github.com/MaleekNoob" class="mr-4">Github</a>
+            <a href="https://www.kaggle.com/maleeknoob">Kaggle</a>
+        </div>
+    </footer>
+</body>
+</html>

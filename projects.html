@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maleek - Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#333333',
+                        secondary: '#666666',
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+
+        /* Mobile Portrait (small screens like iPhone, smaller Android) */
+        @media (max-width: 480px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav.flex > div > a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        /* Mobile Landscape and Tablets (already present in your code) */
+        @media (max-width: 768px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav.flex > div > a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        /* Tablets (Portrait) */
+        @media (max-width: 1024px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+
+            nav.flex > div > a {
+                margin: 5px 0;
+            }
+
+            nav#socials {
+                display: block;
+                text-align: center;
+            }
+
+            nav#socials a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+        }
+
+        /* Medium Screens (Laptops/Desktops) */
+        @media (max-width: 1280px) {
+            nav.flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav.flex > div {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            nav.flex > div > a {
+                margin: 5px 0;
+            }
+
+            nav#socials {
+                display: block;
+                text-align: center;
+            }
+
+            nav#socials a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+        }
+
+        /* Large Screens (Desktops) */
+        @media (min-width: 1281px) {
+            nav.flex {
+                justify-content: space-between;
+            }
+
+            nav.flex > div {
+                width: auto;
+            }
+
+            nav#socials a {
+                margin: 0 30px;
+            }
+        }
+
+    </style>
+
+</head>
+<body class="bg-stone-200 text-primary font-montserrat">
+
+    <header class="container mx-auto px-4 py-8">
+        <nav class="flex justify-between items-center">
+            <div class="bg-zinc-200 text-black px-2 py-4 rounded-full">
+                <a href="mailto:maleekhussainali456@gmail.com" class="text-sm font-bold mr-4">maleekhussainali456@gmail.com</a>
+                <a href="Maleek-Hussain-Ali_Resume.pdf" class="bg-white font-bold text-black px-5 py-4 rounded-full text-sm">Copy</a>
+                <a href="Maleek-Hussain-Ali_Resume.pdf" class="bg-white font-bold text-black px-5 py-4 rounded-full text-sm">CV</a>
+            </div>
+            <div id="socials inline-block">
+                <a href="index.html" class="mr-4 font-bold">Home</a>
+                <a href="personal-profile.html" class="mr-4 font-bold">Personal Profile</a>
+                <a href="gallery-page.html" class="mr-4 font-bold">Gallery Page</a>
+                <a href="career-goals.html" class="mr-4 font-bold">Career Goals</a>
+                <a href="projects.html" class="mr-4 font-bold">Projects</a>
+                <a href="skills-and-interests.html" class="mr-4 font-bold">Skills and Interests</a>
+                <a href="contact.html" class="font-bold">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto my-8">
+        <section id="projects" class="text-center">
+            <h1 class="text-5xl font-bold mb-8">Projects</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: Smart YouTube Video Assistant -->
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <img src="web-app-snap.jpeg" alt="Smart YouTube Video Assistant Screenshot" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h2 class="text-2xl font-bold mb-2">Smart-YouTube-Video-Assistant</h2>
+                    <p class="text-lg mb-2">An AI-based YouTube video assistant that responds to custom prompts and provides summaries, relevant snapshots, and video snippets, along with recommended web sources and images.</p>
+                    <p class="text-sm mb-4">Technologies Used: Python, Gemini API, YouTube Data API, Whisper, NLP, Video Processing</p>
+                    <a href="https://github.com/MaleekNoob/Smart-YouTube-Video-Assistant" class="text-blue-500 hover:underline">GitHub Repository</a>
+                </div>
+
+                <!-- Project 2: Various API Integrations -->
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <img src="api-integration-snap.png" alt="API Integrations Screenshot" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h2 class="text-2xl font-bold mb-2">Various API Integrations</h2>
+                    <p class="text-lg mb-2">Integration of various APIs such as Google Custom Search, YouTube Data V3, Gemini, and Whisper for enhanced automation and data processing.</p>
+                    <p class="text-sm mb-4">Technologies Used: Google APIs, YouTube Data API, Llama 3.1, Whisper, Python</p>
+                    <a href="https://github.com/MaleekNoob/API-integration" class="text-blue-500 hover:underline">GitHub Repository</a>
+                </div>
+
+                <!-- Project 3: Travel Agency Chatbot -->
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <img src="travel-agency-chatbot-snap.jpg" alt="Travel Agency Chatbot Screenshot" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h2 class="text-2xl font-bold mb-2">Travel-Agency-Chatbot</h2>
+                    <p class="text-lg mb-2">A recommendation-based chatbot for a local travel agency, offering travel spots and details within Pakistan.</p>
+                    <p class="text-sm mb-4">Technologies Used: RAG Chatbot, Python, NLP</p>
+                    <a href="https://github.com/MaleekNoob/Travel-Agency-Chatbot" class="text-blue-500 hover:underline">GitHub Repository</a>
+                </div>
+
+                <!-- Project 4: Machine Learning Programs -->
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <img src="ml-programs-snap.png" alt="Machine Learning Programs Screenshot" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h2 class="text-2xl font-bold mb-2">Machine Learning Programs</h2>
+                    <p class="text-lg mb-2">A collection of machine learning programs covering topics such as NLP, classification, CNNs, RNNs, transformers, and time series.</p>
+                    <p class="text-sm mb-4">Technologies Used: Python, TensorFlow, PyTorch, NLP, Transformers</p>
+                    <a href="https://github.com/MaleekNoob/Machine-Learning-Programs" class="text-blue-500 hover:underline">GitHub Repository</a>
+                </div>
+
+                <!-- Add more project cards here if needed -->
+            </div>
+        </section>
+    </main>
+
+    <hr class="border-t-2 border-gray-300 my-8 mx-auto" style="width: 90%;">
+
+    <footer class="container mx-auto px-4 py-8 text-center text-xl">
+        <p>&copy; 2024 All rights reserved.</p>
+        <div class="mt-4">
+            <a href="https://www.linkedin.com/in/maleek-hussain-ali-b60045249/" class="mr-4">LinkedIn</a>
+            <a href="https://github.com/MaleekNoob" class="mr-4">Github</a>
+            <a href="https://www.kaggle.com/maleeknoob">Kaggle</a>
+        </div>
+    </footer>
+
+</body>
+</html>
